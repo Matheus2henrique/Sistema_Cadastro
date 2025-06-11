@@ -13,7 +13,7 @@ export class JuntarService {
     private http: HttpClient
   ) { }
 
-  Cadastro(dadosCadastro : any){
+  cadastro(dadosCadastro : any){
     return firstValueFrom(this.http.post<any>(`${this.baseUrl}/cadastro` , dadosCadastro));
   }
 

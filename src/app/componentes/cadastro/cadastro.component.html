@@ -4,19 +4,19 @@
       <h1 class="cadastro">Area Cadastro</h1>
       <form class="cads">
         <label class="cad">Nome : </label>
-        <input class="CaixaCad" [(ngModel)]="dadosCadastro.nome" type="text" placeholder="   Jose" required>
+        <input class="CaixaCad" name="nome" [(ngModel)]="dadosCadastro.nome" type="text" placeholder="   Jose" required>
 
         <label class="cad">CPF : </label>
-        <input class="CaixaCad" [(ngModel)]="dadosCadastro.cpf" type="text" placeholder="   000.000.000-00" required>
+        <input class="CaixaCad" name="cpf" [(ngModel)]="dadosCadastro.cpf" type="text" placeholder="   000.000.000-00" required>
 
         <label class="cad">Email : </label>
-        <input class="CaixaCad" [(ngModel)]="dadosCadastro.email" type="text" placeholder="   email@gmail.com" required>
+        <input class="CaixaCad" name="email" [(ngModel)]="dadosCadastro.email" type="text" placeholder="   email@gmail.com" required>
 
         <label class="cad">Telefone</label>
-        <input class="CaixaCad" [(ngModel)]="dadosCadastro.telefone" type="text" placeholder="   00000000000" required>
+        <input class="CaixaCad" name="telefone" [(ngModel)]="dadosCadastro.telefone" type="text" placeholder="   00000000000" required>
 
         <label class="cad">Senha : </label>
-        <input class="CaixaCad" [(ngModel)]="dadosCadastro.senha" type="text" placeholder="   xxxxxx" required>
+        <input class="CaixaCad" name="senha" [(ngModel)]="dadosCadastro.senha" type="text" placeholder="   xxxxxx" required>
 
         <button class="bttCad" (click)="bttCad()">Cadastrar</button>
       </form>
