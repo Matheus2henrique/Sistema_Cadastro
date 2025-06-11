@@ -1,6 +1,14 @@
 <main class="main">
-
-  <h1>sjgfsgdfjhfksj</h1>
-
-
+  <div class="container">
+    <h2 class="title">Lista de Cadastros</h2>
+    <ul class="lista-cadastro">
+      <li *ngFor="let c of cadastros" class="tables">
+        <span>Nome: {{ c.nome }}</span>
+        <span>Email: {{ c.email }}</span>
+        <span>CPF: {{ c.cpf }}</span>
+        <span>Telefone: {{ c.telefone }}</span>
+      </li>
+    </ul>
+  </div>
 </main>
+

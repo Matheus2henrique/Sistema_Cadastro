@@ -1,32 +1,49 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
+import { JuntarService } from '../juntar.service';
+import { Login } from '../../models/login';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  imports: [RouterModule, FormsModule]
 })
 export class LoginComponent {
 
+  loginData: Login = {
+    email: '',
+    senha: ''
+  };
+
   constructor(
-    private router: Router
+    private router: Router,
+    private juntarService: JuntarService
   ) {}
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+  async logar() {
+    if (!this.loginData.email || !this.loginData.senha) {
+      alert('Por favor, preencha email e senha');
+      return;
+    }
 
+    try {
+      const success = await this.juntarService.login(this.loginData);
+      if (success) {
+        this.router.navigate(['dashboard']);
+      } else {
+        alert('Email ou senha inválidos.');
+      }
+    } catch (err) {
+      alert('Erro ao tentar logar. Verifique o backend.');
+      console.error(err);
+    }
   }
 
-  logar(){
-    this.router.navigate(['dashboard'])
+  newCad() {
+    this.router.navigate(['cadastro']);
   }
-
-  newCad(){
-    this.router.navigate(['cadastro'])
-  }
-
 }

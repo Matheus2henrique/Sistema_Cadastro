@@ -8,6 +8,7 @@ import br.com.portifolio.Cadastro.util.Mapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CadastroService {
@@ -33,5 +34,15 @@ public class CadastroService {
         Cadastro cadastro = cadastroRepository.findById(id).orElseThrow(() ->
             new CadastroNotFoundException("Conta nao encontrada"));
         return Mapper.toDTO(cadastro);
+    }
+
+    public CadastroDTO login (String email , String senha){
+      Optional<Cadastro> cadastroOpt = cadastroRepository.findByEmailAndSenha(email, senha);
+      if (cadastroOpt.isPresent()){
+        return Mapper.toDTO(cadastroOpt.get());
+      }
+      else {
+        throw new CadastroNotFoundException("Usuario ou senha invalidos!!");
+      }
     }
 }

@@ -1,24 +1,27 @@
 <main class="main">
 
-    <div class="caixaLogin">
-      <h1 class="login">Login</h1>
-      <form class="infs">
-        <label class="inf">Nome : </label>
-        <input class="CaixaInf" type="text" placeholder="   Jose">
+  <div class="caixaLogin">
+    <h1 class="login">Login</h1>
+    <form class="infs">
+      <label class="inf">Email : </label>
+      <input
+        class="CaixaInf" type="text" placeholder="   Jose" [(ngModel)]="loginData.email" name="email">
 
-        <label class="inf">CPF : </label>
-        <input class="CaixaInf" type="text" placeholder="   000.000.000-00">
+      <label class="inf">Senha : </label>
+      <input
+        class="CaixaInf" type="text" placeholder="   000.000.000-00" [(ngModel)]="loginData.senha" name="senha">
 
-        <label class="inf">Senha : </label>
-        <input class="CaixaInf" type="text" placeholder="   xxxxxx">
+      <!-- <label class="inf">Senha : </label>
+      <input
+        class="CaixaInf" type="text"
+        placeholder="   xxxxxx"
+        [(ngModel)]="loginData.senha"
+        name="senha"> -->
+    </form>
 
-      </form>
+    <button class="logarBtt" (click)="logar()">Logar</button>
+    <h4 class="newCad" (click)="newCad()">Nao tenho Cadastro</h4>
 
-        <button class="logarBtt" (click)="logar()">Logar</button>
-        <h4 class="newCad" (click)="newCad()">Nao tenho Cadastro</h4>
-
-
-
-    </div>
+  </div>
 
 </main>

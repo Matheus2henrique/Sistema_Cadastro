@@ -1,8 +1,8 @@
 export interface Cadastro{
   id: number;
   nome: string;
-  cpf: number;
+  cpf: string;
   email: string;
   telefone: number;
-  senha: number;
+  senha: string;
 }

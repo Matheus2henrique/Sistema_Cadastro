@@ -22,7 +22,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedHeaders("*")
                 .allowCredentials(true);
 
-        registry.addMapping("login")
+        registry.addMapping("/login")
                 .allowedOrigins("http://localhost:4200")
                 .allowedMethods("GET","POST","PUT","DELETE")
                 .allowedHeaders("*")

@@ -34,26 +34,11 @@ export class CadastroComponent {
 
     const { nome , cpf , email , telefone , senha } = this.dadosCadastro;
 
-    // if(!nome || !cpf || !email || !telefone || !senha){
-    //   alert("Preencha todos os campos !!");
-    //   return;
-    // }
+    if(!nome || !cpf || !email || !telefone || !senha){
+      alert("Preencha todos os campos !!");
+      return;
+    }
 
-    if(!nome){
-      alert("nome");return
-    }
-    if(!cpf){
-      alert("cpf");return
-    }
-    if(!email){
-      alert("email");return
-    }
-    if(!telefone){
-      alert("telefone");return
-    }
-    if(!senha){
-      alert("senha");return
-    }
     try{
 
       const response = await this.service.cadastro(this.dadosCadastro);
